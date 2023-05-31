@@ -1,4 +1,4 @@
-    function sayHello(amount,fname,lname,email,reference) {
+    function sayHello() {
   const admin=require('firebase-admin')
     const serviceAccount =require('./serviceAccountKey.json')
 admin.initializeApp({
@@ -18,15 +18,13 @@ const db = admin.firestore();
 //       console.error('Error fetching collection data:', error);
 //       res.status(500).json({ error: 'Failed to fetch collection data' });
 //     });
-const usersCollection = db.collection('Payment');
+const usersCollection = db.collection('Ambulance');
 
 // Create a new document with an automatically generated ID
 usersCollection.add({
-  amount: amount,
-  first_name: fname,
-  last_name: lname,
-  reference: reference,
-  email: email
+  name: 'John Doe',
+  age: 25,
+  email: 'john.doe@example.com'
 })
   .then((docRef) => {
     console.log('Document written with ID:', docRef.id);
