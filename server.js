@@ -24,6 +24,7 @@ app.get('/',function(req,res){
 }
 
 .input-field {
+  width:100%
   border: 2px solid purple;
   margin-bottom: 10px;
   padding: 5px;
@@ -35,6 +36,7 @@ app.get('/',function(req,res){
   color: white;
   padding: 5px 10px;
   cursor: pointer;
+   width:100%
 }
 </style><div class="container">
   <form method="POST" action="/">
@@ -49,15 +51,6 @@ app.get('/',function(req,res){
       <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field">
       <br>
       <input type="text" placeholder="tex-ref" name="texRef" class="input-field">
-      <br>
-      <label>
-        <input type="radio" name="gender" value="male">
-        Male
-      </label>
-      <label>
-        <input type="radio" name="gender" value="female">
-        Female
-      </label>
       <br>
       <input type="submit" class="submit-btn">
     </fieldset>
