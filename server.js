@@ -88,7 +88,8 @@ var options = {
 request(options, function (error, response) {
   if (error) throw new Error(error);
   const responseBody = JSON.parse(response.body);
-  res.send(responseBody.data.checkout_url);
+ // res.send(responseBody.data.checkout_url);
+  res.redirect(responseBody.data.checkout_url);
 });
 })
 
