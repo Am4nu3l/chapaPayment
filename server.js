@@ -5,11 +5,11 @@ var text_ref;
 //app.listen(4000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
-var admin = require("firebase-admin");
-var serviceAccount = require("./serviceAccountKey.json");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+// var admin = require("firebase-admin");
+// var serviceAccount = require("./serviceAccountKey.json");
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount)
+// });
 
 app.get('/',function(req,res){
     res.send(` <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
