@@ -72,7 +72,13 @@ app.get('/pay', function(req, res) {
     if (error) throw new Error(error);
     const file1 = require('./index');
     const responseBody = JSON.parse(response.body);
-      file1.sayHello();
+    const amount=responseBody.amount
+    const fname=responseBody.first_name
+    const lname=responseBody.last_name
+    const email=responseBody.email
+    const reference=responseBody.reference
+
+      file1.sayHello(amount,fname,lname,email,reference);
       
     res.send(responseBody);
   });
