@@ -2,7 +2,7 @@ const express=require('express')
 var request = require('request');
 const app=express()
 var text_ref; 
-//app.listen(3000)
+app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 app.get('/',function(req,res){
@@ -28,6 +28,7 @@ app.get('/',function(req,res){
 })
 
 app.post('/',function(req,res){
+  var request = require('request');
    text_ref=req.body["texRef"];
 var options = {
   'method': 'POST',
