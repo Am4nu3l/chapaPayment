@@ -2,7 +2,7 @@ const express=require('express')
 var request = require('request');
 const app=express()
 var text_ref; 
-//app.listen(3000)
+app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 app.get('/',function(req,res){
@@ -71,6 +71,5 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     res.send(responseBody);
-    
   });
 });
