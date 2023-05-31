@@ -28,7 +28,6 @@ app.get('/',function(req,res){
 })
 
 app.post('/',function(req,res){
-   var request = require('request');
    text_ref=req.body["texRef"];
 var options = {
   'method': 'POST',
@@ -72,6 +71,7 @@ app.get('/pay', function(req, res) {
     if (error) throw new Error(error);
     const file1 = require('./index');
 file1.sayHello();
+const responseBody = JSON.parse(response.body);
     res.send(responseBody);
   });
 });
