@@ -6,25 +6,64 @@ app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 app.get('/',function(req,res){
-    res.send(` <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <form method="POST" action="/">
-      <fieldset style="border: 2px solid purple; width: 300px; padding: 10px;">
-        <legend style="color: purple;">Payment Information</legend>
-        <input type="text" placeholder="First Name" name="firstName" style="border-color: purple;"><br>
-        <input type="text" placeholder="Last Name" name="lastName" style="border-color: purple;"><br>
-        <input type="email" placeholder="Email" name="email" style="border-color: purple;"><br>
-        <input type="tel" placeholder="Phone Number" name="phoneNumber" style="border-color: purple;"><br>
-        <input type="text" placeholder="tex-ref" name="texRef" ><br>
-        <label>
-          <input type="radio" name="gender" value="male" style="border-color: purple;"> Male
-        </label>
-        <label>
-          <input type="radio" name="gender" value="female" style="border-color: purple;"> Female
-        </label><br>
-        <input type="submit" style="border-color: purple;">
-      </fieldset>
-    </form>
-  </div>`)
+    res.send(` <style>.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.fieldset {
+  border: 2px solid purple;
+  width: 300px;
+  padding: 10px;
+}
+
+.legend {
+  color: purple;
+}
+
+.input-field {
+  border: 2px solid purple;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.submit-btn {
+  border: 2px solid purple;
+  background-color: purple;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+</style><div class="container">
+  <form method="POST" action="/">
+    <fieldset class="fieldset">
+      <legend class="legend">Payment Information</legend>
+      <input type="text" placeholder="First Name" name="firstName" class="input-field">
+      <br>
+      <input type="text" placeholder="Last Name" name="lastName" class="input-field">
+      <br>
+      <input type="email" placeholder="Email" name="email" class="input-field">
+      <br>
+      <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field">
+      <br>
+      <input type="text" placeholder="tex-ref" name="texRef" class="input-field">
+      <br>
+      <label>
+        <input type="radio" name="gender" value="male">
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female">
+        Female
+      </label>
+      <br>
+      <input type="submit" class="submit-btn">
+    </fieldset>
+  </form>
+</div>
+`)
 })
 
 app.post('/',function(req,res){
@@ -71,7 +110,6 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const file1 = require('./index');
-
     const responseBody = JSON.parse(response.body);
     const amount=responseBody.data.amount
     const fname=responseBody.data.first_name
@@ -79,6 +117,6 @@ app.get('/pay', function(req, res) {
     const email=responseBody.data.email
     const reference=responseBody.data.reference
     file1.sayHello(amount,fname,lname,email,reference);
-   // res.send();
+   res.send("Payment Successfully Completed");
   });
 });
