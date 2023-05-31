@@ -2,15 +2,9 @@ const express=require('express')
 var request = require('request');
 const app=express()
 var text_ref; 
-//app.listen(4000)
+app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
-// var admin = require("firebase-admin");
-// var serviceAccount = require("./serviceAccountKey.json");
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount)
-// });
-
 app.get('/',function(req,res){
     res.send(` <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <form method="POST" action="/">
@@ -77,16 +71,6 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
-  
     res.send(responseBody);
-    
   });
 });
-// const db=admin.firestore()
-// const ref = db.collection("Ambulance");
-// ref.get().then((querySnapshot)=>{
-//   querySnapshot.forEach(element => {
-   
-//     console.log(element.data())
-//   });
-// })
