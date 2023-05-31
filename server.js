@@ -71,8 +71,9 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const file1 = require('./index');
-file1.sayHello();
-const responseBody = JSON.parse(response.body);
+    const responseBody = JSON.parse(response.body);
+      file1.sayHello();
+      
     res.send(responseBody);
   });
 });
