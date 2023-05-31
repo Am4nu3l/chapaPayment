@@ -79,7 +79,7 @@ admin.initializeApp({
 const db = admin.firestore();
     const responseBody = JSON.parse(response.body);
     const amount=responseBody.amount
-    const fname=responseBody.first_name
+    const fname=responseBody.body.first_name
     const lname=responseBody.last_name
     const email=responseBody.email
     const reference=responseBody.reference
