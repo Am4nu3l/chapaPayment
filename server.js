@@ -7,7 +7,7 @@ var text_ref;
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 var admin = require("firebase-admin");
-var serviceAccount = require("serviceAccountKey.json");
+var serviceAccount = require("./serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
