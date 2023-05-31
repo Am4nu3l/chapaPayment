@@ -1,6 +1,5 @@
 const express=require('express')
 var request = require('request');
-
 const app=express()
 var text_ref; 
 //app.listen(4000)
@@ -78,14 +77,14 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
-    const db=admin.firestore()
+   const db=admin.firestore()
 const paymentRef = db.collection("Payment");
 paymentRef.add({
-  "first_name":responseBody.first_name,
-  "last_name":responseBody.last_name,
-  "amount":responseBody.amount,
-  "reference":responseBody.reference,
-  "email":responseBody.email,
+  "first_name":"Aman",
+  "last_name":"Alex",
+  "amount":"100",
+  "reference":"jhadkjahsdk",
+  "email":"liplap2020@gail.com",
 }).then((docRef) => {
     console.log("Document written with ID:", docRef.id);
   })
@@ -96,8 +95,8 @@ paymentRef.add({
     
   });
 });
-
-
+// const db=admin.firestore()
+// const ref = db.collection("Ambulance");
 // ref.get().then((querySnapshot)=>{
 //   querySnapshot.forEach(element => {
    
