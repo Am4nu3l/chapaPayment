@@ -1,6 +1,5 @@
 const express=require('express')
 var request = require('request');
-const admin=require('firebase-admin')
 const app=express()
 var text_ref; 
 //app.listen(3000)
@@ -72,6 +71,7 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     res.send(responseBody);
+    const admin=require('firebase-admin')
     const serviceAccount =require('./serviceAccountKey.json')
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
