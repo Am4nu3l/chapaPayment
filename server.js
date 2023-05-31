@@ -78,11 +78,11 @@ admin.initializeApp({
 });
 const db = admin.firestore();
     const responseBody = JSON.parse(response.body);
-    const amount=responseBody.amount
-    const fname=responseBody.body.first_name
-    const lname=responseBody.last_name
-    const email=responseBody.email
-    const reference=responseBody.reference
+    // const amount=responseBody.amount
+    // const fname=responseBody.body["first_name"]
+    // const lname=responseBody.last_name
+    // const email=responseBody.email
+    // const reference=responseBody.reference
 const usersCollection = db.collection('Payment');
 // // Create a new document with an automatically generated ID
 // usersCollection.add({
@@ -100,6 +100,6 @@ const usersCollection = db.collection('Payment');
 //   });
       // file1.sayHello(amount,fname,lname,email,reference);
       
-    res.send(fname);
+    res.send(responseBody.first_name);
   });
 });
