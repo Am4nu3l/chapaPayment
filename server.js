@@ -78,7 +78,7 @@ app.get('/pay', function(req, res) {
     const lname=responseBody.data.last_name
     const email=responseBody.data.email
     const reference=responseBody.data.reference
-   //  file1.sayHello(amount,fname,lname,email,reference);
-    res.send(amount+email);
+    file1.sayHello(amount,fname,lname,email,reference);
+   // res.send();
   });
 });

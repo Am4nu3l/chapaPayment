@@ -1,4 +1,4 @@
-    function sayHello() {
+    function sayHello(amount,fname,lname,email,reference) {
   const admin=require('firebase-admin')
     const serviceAccount =require('./serviceAccountKey.json')
 admin.initializeApp({
