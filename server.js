@@ -70,35 +70,15 @@ app.get('/pay', function(req, res) {
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
-    // const file1 = require('./index');
-    const admin=require('firebase-admin')
-    const serviceAccount =require('./serviceAccountKey.json')
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-const db = admin.firestore();
+    const file1 = require('./index');
+  
     const responseBody = JSON.parse(response.body);
-    // const amount=responseBody.amount
-    // const fname=responseBody.body["first_name"]
-    // const lname=responseBody.last_name
-    // const email=responseBody.email
-    // const reference=responseBody.reference
-const usersCollection = db.collection('Payment');
-// // Create a new document with an automatically generated ID
-// usersCollection.add({
-//   amount: amount,
-//   first_name: fname,
-//   last_name: lname,
-//   reference: reference,
-//   email: email
-// })
-//   .then((docRef) => {
-//     console.log('Document written with ID:', docRef.id);
-//   })
-//   .catch((error) => {
-//     console.error('Error adding document:', error);
-//   });
-      // file1.sayHello(amount,fname,lname,email,reference);
+    const amount=responseBody.data.amount
+    const fname=responseBody.data.first_name
+    const lname=responseBody.data.last_name
+    const email=responseBody.data.email
+    const reference=responseBody.data.reference
+      file1.sayHello(amount,fname,lname,email,reference);
     res.send(responseBody.data.first_name);
   });
 });
