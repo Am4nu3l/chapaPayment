@@ -3,11 +3,11 @@ var request = require('request');
 
 const app=express()
 var text_ref; 
-//app.listen(4000)
+app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 var admin = require("firebase-admin");
-var serviceAccount = require("c:/Users/TIKA/OneDrive/Desktop/expressApp/serviceAccountKey.json");
+var serviceAccount = require("serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -78,29 +78,14 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
-    const db=admin.firestore()
-const paymentRef = db.collection("Payment");
-paymentRef.add({
-  "first_name":responseBody.first_name,
-  "last_name":responseBody.last_name,
-  "amount":responseBody.amount,
-  "reference":responseBody.reference,
-  "email":responseBody.email,
-}).then((docRef) => {
-    console.log("Document written with ID:", docRef.id);
-  })
-  .catch((error) => {
-    console.error("Error adding document:", error);
-  });
     res.send(responseBody);
     
   });
 });
-
-
-// ref.get().then((querySnapshot)=>{
-//   querySnapshot.forEach(element => {
-   
-//     console.log(element.data())
-//   });
-// })
+const db=admin.firestore()
+let ref=db.collection("Ambulance")
+ref.get().then((querySnapshot)=>{
+  querySnapshote.forEach(element => {
+    console.log(element.data())
+  });
+})
