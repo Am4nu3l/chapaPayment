@@ -1,8 +1,13 @@
 const express=require('express')
 var request = require('request');
+var admin=require('firebase-admin')
+var serviceAccount =require('./serviceAccountKey.json')
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 const app=express()
 var text_ref; 
-app.listen(3000)
+//app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
 app.get('/',function(req,res){
@@ -71,6 +76,13 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
+    const db=admin.firestore()
+const ref = db.collection("Ambulance");
+ref.get().then((querySnapshot)=>{
+  querySnapshot.forEach(element => {
+    console.log(element.data())
+  });
+})
     res.send(responseBody);
   });
 });
