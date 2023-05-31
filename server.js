@@ -72,6 +72,7 @@ app.get('/pay', function(req, res) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
     res.send(responseBody);
+    console.log('big mess')
   });
 });
 
