@@ -99,6 +99,6 @@ const usersCollection = db.collection('Payment');
 //     console.error('Error adding document:', error);
 //   });
       // file1.sayHello(amount,fname,lname,email,reference);
-    res.send(responseBody["firs_name"]);
+    res.send(responseBody);
   });
 });
