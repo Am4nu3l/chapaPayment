@@ -10,6 +10,7 @@ app.get('/',function(req,res){
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:#DDD7E3;
   height: 100vh;
 }
 
@@ -24,12 +25,12 @@ app.get('/',function(req,res){
 }
 
 .input-field {
-  width:100%
+  width:100%;
+  height:50px;
   border: 2px solid purple;
   margin-bottom: 10px;
   padding: 5px;
 }
-
 .submit-btn {
   border: 2px solid purple;
   background-color: purple;
@@ -42,15 +43,15 @@ app.get('/',function(req,res){
   <form method="POST" action="/">
     <fieldset class="fieldset">
       <legend class="legend">Payment Information</legend>
-      <input type="text" placeholder="First Name" name="firstName" class="input-field">
+      <input type="text" placeholder="First Name" name="firstName" class="input-field"required>
       <br>
-      <input type="text" placeholder="Last Name" name="lastName" class="input-field">
+      <input type="text" placeholder="Last Name" name="lastName" class="input-field "required>
       <br>
-      <input type="email" placeholder="Email" name="email" class="input-field">
+      <input type="email" placeholder="Email" name="email" class="input-field "required>
       <br>
-      <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field">
+      <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field" required>
       <br>
-      <input type="text" placeholder="tex-ref" name="texRef" class="input-field">
+      <input type="text" placeholder="tex-ref" name="texRef" class="input-field" required>
       <br>
       <input type="submit" class="submit-btn">
     </fieldset>
