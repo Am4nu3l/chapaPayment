@@ -84,22 +84,22 @@ const db = admin.firestore();
     const email=responseBody.email
     const reference=responseBody.reference
 const usersCollection = db.collection('Payment');
-// Create a new document with an automatically generated ID
-usersCollection.add({
-  amount: amount,
-  first_name: fname,
-  last_name: lname,
-  reference: reference,
-  email: email
-})
-  .then((docRef) => {
-    console.log('Document written with ID:', docRef.id);
-  })
-  .catch((error) => {
-    console.error('Error adding document:', error);
-  });
+// // Create a new document with an automatically generated ID
+// usersCollection.add({
+//   amount: amount,
+//   first_name: fname,
+//   last_name: lname,
+//   reference: reference,
+//   email: email
+// })
+//   .then((docRef) => {
+//     console.log('Document written with ID:', docRef.id);
+//   })
+//   .catch((error) => {
+//     console.error('Error adding document:', error);
+//   });
       // file1.sayHello(amount,fname,lname,email,reference);
       
-    res.send(responseBody);
+    res.send(fname);
   });
 });
