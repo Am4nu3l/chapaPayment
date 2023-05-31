@@ -77,20 +77,7 @@ app.get('/pay', function(req, res) {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     const responseBody = JSON.parse(response.body);
-   const db=admin.firestore()
-const paymentRef = db.collection("Payment");
-paymentRef.add({
-  "first_name":"Aman",
-  "last_name":"Alex",
-  "amount":"100",
-  "reference":"jhadkjahsdk",
-  "email":"liplap2020@gail.com",
-}).then((docRef) => {
-    console.log("Document written with ID:", docRef.id);
-  })
-  .catch((error) => {
-    console.error("Error adding document:", error);
-  });
+  
     res.send(responseBody);
     
   });
