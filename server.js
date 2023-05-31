@@ -1,7 +1,7 @@
 const express=require('express')
 var request = require('request');
 const app=express()
-
+var text_ref; 
 app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
@@ -29,6 +29,7 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
    var request = require('request');
+   text_ref=req.body["texRef"];
 var options = {
   'method': 'POST',
   'url': 'https://api.chapa.co/v1/transaction/initialize',
@@ -43,9 +44,9 @@ var options = {
     "first_name": req.body["firstName"],
     "last_name": req.body["lastName"],
     "phone_number": req.body["phoneNumber"],
-    "tx_ref": req.body["texRef"],
+    "tx_ref": text_ref,
     "callback_url": "https://webhook.site/b6f1d7b2-e3e5-4e47-8da0-7727c6ae4980",
-    "return_url": "http://localhost:3000/pay",
+    "return_url": "https://node-api-lnes.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
@@ -62,7 +63,7 @@ app.get('/pay', function(req, res) {
     //validate event
   var options = {
     'method': 'GET',
-    'url': 'https://api.chapa.co/v1/transaction/verify/wsedrtgyhu',
+    'url': 'https://api.chapa.co/v1/transaction/verify/'+text_ref,
     'headers': {
       'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4'
     }
