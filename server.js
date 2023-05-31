@@ -112,6 +112,38 @@ app.get('/pay', function(req, res) {
     const email=responseBody.data.email
     const reference=responseBody.data.reference
     file1.sayHello(amount,fname,lname,email,reference);
-   res.send("Payment Successfully Completed");
+   res.send(`<style>.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 18px;
+}
+
+.purple-text {
+  color: purple;
+}
+</style><div class="card-container">
+  <div class="card">
+    <h2 class="title">Payment Completed</h2>
+    <p class="message">Now you are a Premium Member of <span class="purple-text">PRECARE</span></p>
+  </div>
+</div>
+`);
   });
 });
