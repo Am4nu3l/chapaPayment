@@ -78,7 +78,7 @@ app.get('/',function(req,res){
       <br>
       <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field" required>
       <br>
-      <input type="text" placeholder="tex-ref" name="texRef" class="input-field" required>
+      <input type="text" placeholder="tex-ref" name="texRef" id="tex_ref" class="input-field" required>
       <br>
       <input type="submit" class="submit-btn">
     </fieldset>
