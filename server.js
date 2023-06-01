@@ -10,7 +10,7 @@ app.get('/',function(req,res){
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#DDD7E3;
+  background-color: #DDD7E3;
   height: 100vh;
 }
 
@@ -25,20 +25,47 @@ app.get('/',function(req,res){
 }
 
 .input-field {
-  width:100%;
-  height:50px;
+  width: 100%;
+  height: 50px;
   border: 2px solid purple;
   margin-bottom: 10px;
   padding: 5px;
 }
+
 .submit-btn {
   border: 2px solid purple;
   background-color: purple;
   color: white;
   padding: 5px 10px;
   cursor: pointer;
-   width:100%
+  width: 100%;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDD7E3;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .fieldset {
+    width: 80%;
+  }
+  
+  .input-field,
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .container.zoom {
+    transform: scale(1.2);
+  }
+}
+
 </style><div class="container">
   <form method="POST" action="/">
     <fieldset class="fieldset">
@@ -138,6 +165,23 @@ app.get('/pay', function(req, res) {
 .purple-text {
   color: purple;
 }
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  .card {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+}
+
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
