@@ -74,7 +74,7 @@ app.get('/',function(req,res){
       <br>
       <input type="text" placeholder="Last Name" name="lastName" class="input-field "required>
       <br>
-      <input type="email" placeholder="Email" name="email" class="input-field "required>
+      <input type="email" placeholder="Email" name="email" id="inp_email" class="input-field "required>
       <br>
       <input type="tel" placeholder="Phone Number" name="phoneNumber" class="input-field" required>
       <br>
