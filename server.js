@@ -70,7 +70,7 @@ app.get('/',function(req,res){
   <form method="POST" action="/">
     <fieldset class="fieldset">
       <legend class="legend">Payment Information</legend>
-      <input type="text" placeholder="amount" name="amount" class="input-field"required>
+      <input type="text" placeholder="amount" name="amount" id="inp_amount" class="input-field"required>
       <br>
       <input type="text" placeholder="First Name" name="firstName" class="input-field"required>
       <br>
