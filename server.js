@@ -1,7 +1,7 @@
 const express=require('express')
 var request = require('request');
 const app=express()
-var text_ref; 
+var text_ref,phone_Number; 
 app.listen(3000)
 app.set('view engine','ejs')
 app.use(express.urlencoded())
@@ -92,6 +92,7 @@ app.get('/',function(req,res){
 app.post('/',function(req,res){
   var request = require('request');
    text_ref=req.body["texRef"];
+   phone_Number=req.body["phoneNumber"];
 var options = {
   'method': 'POST',
   'url': 'https://api.chapa.co/v1/transaction/initialize',
@@ -105,7 +106,7 @@ var options = {
     "email": req.body["email"],
     "first_name": req.body["firstName"],
     "last_name": req.body["lastName"],
-    "phone_number": req.body["phoneNumber"],
+    "phone_number":phone_Number,
     "tx_ref": text_ref,
     "callback_url": "https://webhook.site/b6f1d7b2-e3e5-4e47-8da0-7727c6ae4980",
     "return_url": "https://node-api-lnes.onrender.com/pay",
