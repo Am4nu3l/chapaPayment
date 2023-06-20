@@ -70,6 +70,8 @@ app.get('/',function(req,res){
   <form method="POST" action="/">
     <fieldset class="fieldset">
       <legend class="legend">Payment Information</legend>
+      <input type="text" placeholder="amount" name="amount" class="input-field"required>
+      <br>
       <input type="text" placeholder="First Name" name="firstName" class="input-field"required>
       <br>
       <input type="text" placeholder="Last Name" name="lastName" class="input-field "required>
@@ -98,7 +100,7 @@ var options = {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    "amount": "100",
+    "amount": req.body["amount"],
     "currency": "ETB",
     "email": req.body["email"],
     "first_name": req.body["firstName"],

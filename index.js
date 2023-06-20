@@ -24,7 +24,6 @@ usersCollection.add({
   updateMembership.get().then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     if (doc.data().Email === email) {
-    
       updateMembership.doc(doc.id).update({ membership: 'premium' })
         .then(() => {
           console.log('Membership successfully updated');
