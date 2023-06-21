@@ -179,7 +179,6 @@ app.get('/pay', function(req, res) {
     font-size: 20px;
     margin-bottom: 8px;
   }
-
   .message {
     font-size: 16px;
   }
