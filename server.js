@@ -108,7 +108,7 @@ var options = {
     "last_name": req.body["lastName"],
     "phone_number":phone_Number,
     "tx_ref": text_ref,
-    "callback_url": "https://webhook.site/b6f1d7b2-e3e5-4e47-8da0-7727c6ae4980",
+    "callback_url": "https://webhook.site/7408d680-b6ca-4511-b889-785e90fdae29",
     "return_url": "https://node-api-lnes.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
@@ -129,7 +129,7 @@ app.get('/pay', function(req, res) {
     'method': 'GET',
     'url': 'https://api.chapa.co/v1/transaction/verify/'+text_ref,
     'headers': {
-      'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4'
+      'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r'
     }
   };
   request(options, function (error, response) {
