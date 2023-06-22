@@ -129,7 +129,7 @@ app.get('/pay', function(req, res) {
     'method': 'GET',
     'url': 'https://api.chapa.co/v1/transaction/verify/'+text_ref,
     'headers': {
-      'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r'
+      'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4'
     }
   };
   request(options, function (error, response) {
