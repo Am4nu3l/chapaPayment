@@ -13,6 +13,7 @@ app.get('/',function(req,res){
   background-color: #DDD7E3;
   height: 100vh;
 }
+
 .fieldset {
   border: 2px solid purple;
   width: 300px;
@@ -87,6 +88,7 @@ app.get('/',function(req,res){
 </div>
 `)
 })
+
 app.post('/',function(req,res){
   var request = require('request');
    text_ref=req.body["texRef"];
@@ -111,6 +113,7 @@ var options = {
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
+
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
@@ -184,7 +187,7 @@ app.get('/pay', function(req, res) {
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
-    <p class="message">Payment Has Been Submitted<span class="purple-text">Eventify</span></p>
+    <p class="message">Now you are a Premium Member of <span class="purple-text">PRECARE</span></p>
   </div>
 </div>
 `);
