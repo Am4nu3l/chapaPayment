@@ -6,6 +6,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 const usersCollection = db.collection('Payment');
+console.log("hello nigga index");
 // // Create a new document with an automatically generated ID
 usersCollection.add({
   amount: amount,
@@ -21,5 +22,4 @@ usersCollection.add({
     console.error('Error adding document:', error);
   });
 }
-
 module.exports = { sayHello };
