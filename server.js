@@ -108,7 +108,7 @@ var options = {
     "phone_number":phone_Number,
     "tx_ref": text_ref,
     "callback_url": "https://webhook.site/7408d680-b6ca-4511-b889-785e90fdae29",
-    "return_url": "https://node-api-lnes.onrender.com/pay",
+    "return_url": "https://https://chapa-pay.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
