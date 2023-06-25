@@ -166,7 +166,7 @@ app.get('/pay', function(req, res) {
 }
 
 .purple-text {
-  color: blue;
+  color: purple;
 }
 
 /* Media queries for mobile devices */
@@ -187,7 +187,7 @@ app.get('/pay', function(req, res) {
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
-    <p class="message">Payment Successful!<span class="purple-text">Eventify</span></p>
+    <p class="message">You Have Payed For The Event<span class="purple-text">Eventify</span></p>
   </div>
 </div>
 `);
