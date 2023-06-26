@@ -97,7 +97,7 @@ var options = {
   'method': 'POST',
   'url': 'https://api.chapa.co/v1/transaction/initialize',
   'headers': {
-    'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4',
+    'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
@@ -108,12 +108,11 @@ var options = {
     "last_name": req.body["lastName"],
     "phone_number":phone_Number,
     "tx_ref": text_ref,
-    "callback_url": "https://webhook.site/b6f1d7b2-e3e5-4e47-8da0-7727c6ae4980",
-    "return_url": "https://node-api-lnes.onrender.com/pay",
+    "callback_url": "https://webhook.site/275a5c10-8eaf-48a7-aa9a-8c4be12a11f0",
+    "return_url": "https://chapa-pay.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
-
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
@@ -129,7 +128,7 @@ app.get('/pay', function(req, res) {
     'method': 'GET',
     'url': 'https://api.chapa.co/v1/transaction/verify/'+text_ref,
     'headers': {
-      'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4'
+      'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r'
     }
   };
   request(options, function (error, response) {
