@@ -88,6 +88,7 @@ app.get('/',function(req,res){
 </div>
 `)
 })
+
 app.post('/',function(req,res){
   var request = require('request');
    text_ref=req.body["texRef"];
@@ -96,7 +97,7 @@ var options = {
   'method': 'POST',
   'url': 'https://api.chapa.co/v1/transaction/initialize',
   'headers': {
-    'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r',
+    'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4',
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
@@ -107,18 +108,17 @@ var options = {
     "last_name": req.body["lastName"],
     "phone_number":phone_Number,
     "tx_ref": text_ref,
-    "callback_url": "https://webhook.site/275a5c10-8eaf-48a7-aa9a-8c4be12a11f0",
-    "return_url": "https://chapa-pay.onrender.com/pay",
+    "callback_url": "https://webhook.site/b6f1d7b2-e3e5-4e47-8da0-7727c6ae4980",
+    "return_url": "https://node-api-lnes.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
-};
 
+};
 request(options, function (error, response) {
   if (error) throw new Error(error);
   const responseBody = JSON.parse(response.body);
  // res.send(responseBody.data.checkout_url);
- console.log(response);
   res.redirect(responseBody.data.checkout_url);
 });
 })
@@ -129,7 +129,7 @@ app.get('/pay', function(req, res) {
     'method': 'GET',
     'url': 'https://api.chapa.co/v1/transaction/verify/'+text_ref,
     'headers': {
-      'Authorization': 'Bearer CHASECK_TEST-BjgHDyZYBnafigUcp2GtkSyIn6fYb44r'
+      'Authorization': 'Bearer CHASECK_TEST-IjiumdwjjtyyHauZeofjFkm2248FIVG4'
     }
   };
   request(options, function (error, response) {
@@ -174,6 +174,7 @@ app.get('/pay', function(req, res) {
   .card {
     padding: 10px;
   }
+
   .title {
     font-size: 20px;
     margin-bottom: 8px;
@@ -182,10 +183,11 @@ app.get('/pay', function(req, res) {
     font-size: 16px;
   }
 }
+
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
-    <p class="message">You Have Payed For The Event<span class="purple-text">Eventify</span></p>
+    <p class="message">Now you are a Premium Member of <span class="purple-text">PRECARE</span></p>
   </div>
 </div>
 `);
