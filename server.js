@@ -108,12 +108,11 @@ var options = {
     "last_name": req.body["lastName"],
     "phone_number":phone_Number,
     "tx_ref": text_ref,
-    "callback_url": "https://webhook.site/7408d680-b6ca-4511-b889-785e90fdae29",
+    "callback_url": "https://webhook.site/275a5c10-8eaf-48a7-aa9a-8c4be12a11f0",
     "return_url": "https://chapa-pay.onrender.com/pay",
     "customization[title]": "Payment for my favourite merchant",
     "customization[description]": "I love online payments"
   })
-
 };
 request(options, function (error, response) {
   if (error) throw new Error(error);
