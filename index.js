@@ -22,4 +22,5 @@ usersCollection.add({
     console.error('Error adding document:', error);
   });
 }
+
 module.exports = { sayHello };
