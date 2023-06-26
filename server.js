@@ -119,6 +119,7 @@ request(options, function (error, response) {
   if (error) throw new Error(error);
   const responseBody = JSON.parse(response.body);
  // res.send(responseBody.data.checkout_url);
+ console.log(response);
   res.redirect(responseBody.data.checkout_url);
 });
 })
@@ -174,7 +175,6 @@ app.get('/pay', function(req, res) {
   .card {
     padding: 10px;
   }
-
   .title {
     font-size: 20px;
     margin-bottom: 8px;
@@ -183,7 +183,6 @@ app.get('/pay', function(req, res) {
     font-size: 16px;
   }
 }
-
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
