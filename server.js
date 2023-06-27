@@ -10,7 +10,7 @@ app.get('/',function(req,res){
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DDD7E3;
+  background-color: white;
   height: 100vh;
 }
 
@@ -21,20 +21,20 @@ app.get('/',function(req,res){
 }
 
 .legend {
-  color: purple;
+  color: #007bff;
 }
 
 .input-field {
   width: 100%;
   height: 50px;
-  border: 2px solid purple;
+  border: 2px solid #007bff;
   margin-bottom: 10px;
   padding: 5px;
 }
 
 .submit-btn {
-  border: 2px solid purple;
-  background-color: purple;
+  border: 2px solid #007bff;
+  background-color: #007bff;
   color: white;
   padding: 5px 10px;
   cursor: pointer;
@@ -72,9 +72,9 @@ app.get('/',function(req,res){
       <legend class="legend">Payment Information</legend>
       <input type="text" placeholder="amount" name="amount" id="inp_amount" class="input-field"required>
       <br>
-      <input type="text" placeholder="First Name" name="firstName" class="input-field"required>
+      <input type="text" placeholder="First Name" name="firstName" id="inp_fname" class="input-field"required>
       <br>
-      <input type="text" placeholder="Last Name" name="lastName" class="input-field "required>
+      <input type="text" placeholder="Last Name" name="lastName" id="inp_lname" class="input-field "required>
       <br>
       <input type="email" placeholder="Email" name="email" id="inp_email" class="input-field "required>
       <br>
@@ -186,7 +186,7 @@ app.get('/pay', function(req, res) {
 </style><div class="card-container">
   <div class="card">
     <h2 class="title">Payment Completed</h2>
-    <p class="message">Now you are a Premium Member of <span class="purple-text">PRECARE</span></p>
+    <p class="message">You Have Paid For Your Event <span class="purple-text">Eventify</span></p>
   </div>
 </div>
 `);
