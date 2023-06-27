@@ -10,12 +10,12 @@ app.get('/',function(req,res){
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #FFFFFF;
   height: 100vh;
 }
 
 .fieldset {
-  border: 2px solid purple;
+  border: 2px solid #007bff;
   width: 300px;
   padding: 10px;
 }
@@ -42,7 +42,7 @@ app.get('/',function(req,res){
 }
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 100%) {
   .container {
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ app.get('/',function(req,res){
   }
   
   .fieldset {
-    width: 80%;
+    width: 90%;
   }
   
   .input-field,
